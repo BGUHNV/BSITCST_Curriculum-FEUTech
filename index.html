@@ -23,6 +23,7 @@
         h1 { color: var(--primary-color); margin-bottom: 5px; font-size: 1.8rem; }
         h3 { font-size: 1rem; color: #666; }
 
+        /* Dashboard Stats */
         .dashboard-stats {
             background: white; padding: 15px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             margin-bottom: 20px; display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 15px;
@@ -33,46 +34,31 @@
         .progress-container { width: 100%; background-color: #e0e0e0; border-radius: 10px; margin-top: 5px; height: 20px; overflow: hidden; }
         .progress-bar { height: 100%; background-color: var(--accent-color); width: 0%; transition: width 0.5s ease-in-out; text-align: center; line-height: 20px; color: white; font-size: 0.8em; }
 
-        .planner-section { display: flex; gap: 20px; margin-bottom: 40px; min-height: 600px; }
-        .planner-col { flex: 1; background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); display: flex; flex-direction: column; overflow: hidden; height: 650px; }
-        .planner-header { padding: 12px 15px; background: var(--primary-color); color: white; font-weight: bold; display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem; }
-        .planner-controls { padding: 10px; background: #eee; border-bottom: 1px solid #ddd; display: flex; gap: 5px; align-items: center; flex-wrap: wrap; }
-        .planner-controls select { padding: 8px; border-radius: 4px; border: 1px solid #ccc; flex: 1; min-width: 80px; font-size: 0.9rem; }
-        .planner-controls button { padding: 8px 12px; background: var(--accent-color); color: white; border: none; border-radius: 4px; cursor: pointer; flex-shrink: 0; font-size: 0.9rem; }
-        .planner-body { flex: 1; padding: 10px; overflow-y: auto; background-color: #f8f9fa; }
-
-        .drop-zone { min-height: 100%; border: 2px dashed #ccc; border-radius: 4px; padding: 5px; transition: background 0.3s; }
-        .drop-zone.drag-over { background-color: #e3f2fd; border-color: var(--accent-color); }
-
-        .draggable-card { background: white; border: 1px solid #ddd; border-left: 4px solid var(--accent-color); padding: 10px; margin-bottom: 8px; border-radius: 4px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); font-size: 0.85em; display: flex; justify-content: space-between; align-items: center; transition: transform 0.1s; }
-        .draggable-card:active { transform: scale(0.98); }
-        .card-units { font-weight: bold; color: #666; background: #eee; padding: 2px 6px; border-radius: 4px; }
-
+        /* Year/Term Layout */
         .year-section { margin-bottom: 30px; }
         .year-title { background-color: var(--primary-color); color: white; padding: 10px 15px; border-radius: 8px 8px 0 0; margin: 0; font-size: 1.1rem; }
         .term-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; background: #e8eef1; padding: 15px; border-radius: 0 0 8px 8px; }
         .term-card { background: var(--card-bg); border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); display: flex; flex-direction: column; overflow: hidden; }
         .term-header { background-color: var(--accent-color); color: white; padding: 8px 12px; font-weight: bold; display: flex; justify-content: space-between; font-size: 0.9rem; }
 
+        /* Tables */
         .table-responsive { width: 100%; overflow-x: auto; }
         table { width: 100%; border-collapse: collapse; font-size: 0.85em; min-width: 400px; }
-        th, td { padding: 8px; text-align: left; border-bottom: 1px solid #eee; }
+        th, td { padding: 8px; text-align: left; border-bottom: 1px solid #eee; vertical-align: middle; }
         
         .status-passed { background-color: #d4edda; color: #155724; }
         .status-failed { background-color: #f8d7da; color: #721c24; }
-        .status-locked { background-color: #e9ecef; color: #6c757d; opacity: 0.7; }
 
-        .btn { padding: 5px 10px; cursor: pointer; border: 1px solid #ddd; background: white; border-radius: 3px; font-size: 0.85em; }
-        .btn-pass.active-pass { background: #28a745; color: white; border-color: #28a745; }
-        .btn-fail.active-fail { background: #dc3545; color: white; border-color: #dc3545; }
+        .btn { padding: 5px 10px; cursor: pointer; border: 1px solid #ddd; background: white; border-radius: 3px; font-size: 0.85em; margin-left: 2px;}
+        .btn-pass:hover, .active-pass { background: #28a745; color: white; border-color: #28a745; }
+        .btn-fail:hover, .active-fail { background: #dc3545; color: white; border-color: #dc3545; }
 
-        .controls { text-align: center; margin: 20px 0; display: flex; flex-direction: column; gap: 10px; align-items: center; }
-        #notification { position: fixed; top: 20px; right: 20px; left: 20px; max-width: 400px; margin: 0 auto; background: #333; color: white; padding: 15px; border-radius: 5px; opacity: 0; transition: opacity 0.3s; z-index: 1000; text-align: center; pointer-events: none; }
+        .controls { text-align: center; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; align-items: center; }
+        input[type="text"] { padding: 10px; width: 300px; border: 1px solid #ccc; border-radius: 4px; }
+        button.reset-btn { padding: 10px 15px; background: #666; color: white; border: none; border-radius: 4px; cursor: pointer; }
     </style>
 </head>
 <body>
-
-<div id="notification"></div>
 
 <div class="container">
     <header>
@@ -87,53 +73,9 @@
         <div class="progress-container"><div class="progress-bar" id="overallProgressBar">0%</div></div>
     </div>
 
-    <div class="planner-section">
-        <div class="planner-col">
-            <div class="planner-header">
-                <span>Available Courses</span>
-                <small>Drag or Tap to Add</small>
-            </div>
-            <div class="planner-body">
-                <input type="text" id="plannerSearch" placeholder="Filter subjects..." style="width: 100%; box-sizing: border-box; margin-bottom: 10px; padding: 8px;">
-                <div id="source-zone" class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            </div>
-        </div>
-
-        <div class="planner-col">
-            <div class="planner-header">
-                <span>My Draft Term</span>
-                <span id="planner-status" class="status-warning">0 Units</span>
-            </div>
-            <div class="planner-controls">
-                <select id="selYear">
-                    <option value="FIRST YEAR">First Year</option>
-                    <option value="SECOND YEAR">Second Year</option>
-                    <option value="THIRD YEAR">Third Year</option>
-                    <option value="FOURTH YEAR">Fourth Year</option>
-                </select>
-                <select id="selTerm">
-                    <option value="1st Term">1st Term</option>
-                    <option value="2nd Term">2nd Term</option>
-                    <option value="3rd Term">3rd Term</option>
-                </select>
-                <select id="selMaxUnits" onchange="updatePlannerStats()">
-                    <option value="21">Max 21</option>
-                    <option value="22">Max 22</option>
-                </select>
-                <button onclick="loadTermTemplate()">Load</button>
-            </div>
-            <div class="planner-body">
-                <div id="target-zone" class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)">
-                    <p style="text-align: center; color: #aaa; margin-top: 20px;">Select Year/Term and click 'Load'</p>
-                </div>
-            </div>
-            <div id="plannerFooter" style="padding: 10px; background: #eee; text-align: center; font-size: 0.8em;">Min: 12 | Max: 21 Units</div>
-        </div>
-    </div>
-
     <div class="controls">
-        <input type="text" id="searchBar" placeholder="Search curriculum table..." style="padding:10px; width:300px; border-radius:4px; border:1px solid #ccc;">
-        <button onclick="resetData()" style="padding:10px; background:#666; color:white; border:none; border-radius:4px; cursor:pointer;">Reset All Progress</button>
+        <input type="text" id="searchBar" placeholder="Search curriculum table...">
+        <button class="reset-btn" onclick="resetData()">Reset All Progress</button>
     </div>
 
     <div id="curriculum-root"></div>
@@ -167,25 +109,7 @@
                         { code: "GED0015", title: "PHYSICAL EDUCATION 2", units: 3, pre: ["GED0004"] },
                         { code: "GED0001", title: "SPECIALIZED ENGLISH PROGRAM 1", units: 3, pre: [] },
                         { code: "CCS0007", title: "COMPUTER PROGRAMMING 2 (LEC)", units: 2, pre: ["CCS0003", "CCS0003L"] },
-                        { code: "CCS0007L", title: "COMPUTER PROGRAMMING 2 (LAB)", units: 1, pre: ["CCS0003", "CCS0003L"] },
-                        { code: "CCS0005", title: "INTRODUCTION TO HUMAN COMPUTER INTERACTION (LEC)", units: 2, pre: ["CCS0001", "CCS0001L"] },
-                        { code: "CCS0005L", title: "INTRODUCTION TO HUMAN COMPUTER INTERACTION (LAB)", units: 1, pre: ["CCS0001", "CCS0001L"] }
-                    ]
-                },
-                {
-                    name: "3rd Term",
-                    courses: [
-                        { code: "CCS0015", title: "DATA STRUCTURES AND ALGORITHMS (LEC)", units: 2, pre: ["CCS0007", "CCS0007L"] },
-                        { code: "CCS0015L", title: "DATA STRUCTURES AND ALGORITHMS (LAB)", units: 1, pre: ["CCS0007", "CCS0007L"] },
-                        { code: "CCS0105", title: "PROFESSIONAL DEVELOPMENT (COMPUTING PROFESSION)", units: 1, pre: ["GED0006"] },
-                        { code: "GED0007", title: "ART APPRECIATION", units: 3, pre: [] },
-                        { code: "GED0023", title: "PHYSICAL EDUCATION 3", units: 3, pre: ["GED0015"] },
-                        { code: "GED0035", title: "THE CONTEMPORARY WORLD", units: 3, pre: [] },
-                        { code: "GED0039", title: "APPLIED STATISTICS", units: 3, pre: ["GED0027"] },
-                        { code: "IT0004", title: "USER EXPERIENCE DESIGN FUNDAMENTALS", units: 1, pre: ["IT0002"] },
-                        { code: "NSTP2", title: "CIVIC WELFARE TRAINING SERVICE 2", units: 0, pre: ["NSTP1"] },
-                        { code: "IT0043", title: "WEB DESIGN WITH CLIENT SIDE SCRIPTING", units: 2, pre: ["CCS0005", "CCS0005L"] },
-                        { code: "IT0043L", title: "WEB DESIGN WITH CLIENT SIDE SCRIPTING (LAB)", units: 1, pre: ["CCS0005", "CCS0005L"] }
+                        { code: "CCS0007L", title: "COMPUTER PROGRAMMING 2 (LAB)", units: 1, pre: ["CCS0003", "CCS0003L"] }
                     ]
                 }
             ]
@@ -201,29 +125,27 @@
                         { code: "CCS0023L", title: "OBJECT ORIENTED PROGRAMMING (LAB)", units: 1, pre: ["CCS0007", "CCS0007L"] },
                         { code: "GED0019", title: "UNDERSTANDING THE SELF", units: 3, pre: [] },
                         { code: "GED0021", title: "SPECIALIZED ENGLISH PROGRAM 2", units: 3, pre: ["GED0001"] },
-                        { code: "IT0019", title: "QUANTITATIVE METHODS", units: 3, pre: ["GED0039"] },
-                        { code: "IT0051", title: "IT ELECTIVE - HCI 2", units: 3, pre: ["CCS0005", "CCS0005L"] },
-                        { code: "IT0119", title: "INFORMATION MANAGEMENT", units: 2, pre: ["CCS0015", "CCS0015L"] },
-                        { code: "IT0119L", title: "INFORMATION MANAGEMENT (LAB)", units: 1, pre: ["CCS0015", "CCS0015L"] }
+                        { code: "IT0019", title: "QUANTITATIVE METHODS (INCL MODELING AND SIMULATION)", units: 3, pre: [] },
+                        { code: "IT0051", title: "IT ELECTIVE - HUMAN COMPUTER INTERACTION 2", units: 3, pre: [] },
+                        { code: "IT0119", title: "INFORMATION MANAGEMENT", units: 2, pre: [] },
+                        { code: "IT0119L", title: "INFORMATION MANAGEMENT (LAB)", units: 1, pre: [] }
                     ]
                 }
             ]
         }
-        // ... (remaining data follows same pattern)
     ];
 
     let courseStatus = JSON.parse(localStorage.getItem('bsit_smart_tracker_v3')) || {};
     const root = document.getElementById('curriculum-root');
-    const sourceZone = document.getElementById('source-zone');
-    const targetZone = document.getElementById('target-zone');
 
     function saveState() {
         localStorage.setItem('bsit_smart_tracker_v3', JSON.stringify(courseStatus));
         renderCurriculum(document.getElementById('searchBar').value);
-        renderPlannerSource();
     }
 
-    function resetData() { if(confirm("Reset all data?")) { courseStatus = {}; saveState(); } }
+    function resetData() {
+        if(confirm("Reset all data?")) { courseStatus = {}; saveState(); }
+    }
 
     function setStatus(code, status) {
         if (courseStatus[code] === status) { delete courseStatus[code]; } 
@@ -231,33 +153,23 @@
         saveState();
     }
 
-    function getCourseByCode(code) {
-        for (const y of curriculumData) {
-            for (const t of y.terms) {
-                const found = t.courses.find(c => c.code === code);
-                if (found) return found;
-            }
-        }
-        return null;
-    }
-
-    // --- RENDER MAIN UI (CORRECTED UNIT COMPUTATION) ---
     function renderCurriculum(filterText = '') {
         root.innerHTML = '';
-        let totalUnits = 0;
-        let completedUnitsTotal = 0;
+        let totalUnitsAll = 0;
+        let completedUnitsAll = 0;
 
-        // Global Stats calculation
+        // Global stats calculation
         curriculumData.forEach(y => y.terms.forEach(t => t.courses.forEach(c => {
-            totalUnits += c.units;
-            if (courseStatus[c.code] === 'passed') completedUnitsTotal += c.units;
+            totalUnitsAll += c.units;
+            if (courseStatus[c.code] === 'passed') completedUnitsAll += c.units;
         })));
 
-        document.getElementById('totalUnitsCompleted').textContent = completedUnitsTotal;
-        document.getElementById('totalUnitsRequired').textContent = totalUnits;
-        let percentage = totalUnits > 0 ? Math.round((completedUnitsTotal / totalUnits) * 100) : 0;
+        document.getElementById('totalUnitsCompleted').textContent = completedUnitsAll;
+        document.getElementById('totalUnitsRequired').textContent = totalUnitsAll;
+        let percentage = totalUnitsAll > 0 ? Math.round((completedUnitsAll / totalUnitsAll) * 100) : 0;
         document.getElementById('overallProgressBar').style.width = percentage + "%";
         document.getElementById('overallProgressBar').textContent = percentage + "%";
+        document.getElementById('completionPercentage').textContent = percentage + "%";
 
         const lowerFilter = filterText.toLowerCase();
 
@@ -265,6 +177,7 @@
             const yearSection = document.createElement('div');
             yearSection.className = 'year-section';
             yearSection.innerHTML = `<h2 class="year-title">${yearData.year}</h2>`;
+            
             const termContainer = document.createElement('div');
             termContainer.className = 'term-container';
 
@@ -277,17 +190,18 @@
                     const termCard = document.createElement('div');
                     termCard.className = 'term-card';
 
-                    // --- UNIT LOGIC FIX START ---
-                    const termTotalUnits = term.courses.reduce((sum, c) => sum + c.units, 0);
-                    const termPassedUnits = term.courses.reduce((sum, c) => {
+                    // --- UNIT CALCULATION FIX ---
+                    const termTotal = term.courses.reduce((sum, c) => sum + c.units, 0);
+                    const termPassed = term.courses.reduce((sum, c) => {
                         return courseStatus[c.code] === 'passed' ? sum + c.units : sum;
                     }, 0); // Correctly initialized to 0
-                    // --- UNIT LOGIC FIX END ---
 
-                    termCard.innerHTML = `<div class="term-header"><span>${term.name}</span><span>${termPassedUnits}/${termTotalUnits} Units</span></div>`;
+                    termCard.innerHTML = `<div class="term-header"><span>${term.name}</span><span>${termPassed}/${termTotal} units</span></div>`;
                     
+                    const tableWrap = document.createElement('div');
+                    tableWrap.className = 'table-responsive';
                     const table = document.createElement('table');
-                    table.innerHTML = `<thead><tr><th>Code</th><th>Title</th><th>U</th><th>Actions</th></tr></thead>`;
+                    table.innerHTML = `<thead><tr><th>Code</th><th>Title</th><th>Units</th><th>Actions</th></tr></thead>`;
                     const tbody = document.createElement('tbody');
 
                     filteredCourses.forEach(c => {
@@ -297,10 +211,10 @@
                         if (status === 'failed') tr.className = 'status-failed';
 
                         tr.innerHTML = `
-                            <td>${c.code}</td>
+                            <td><strong>${c.code}</strong></td>
                             <td>${c.title}</td>
-                            <td>${c.units}</td>
-                            <td>
+                            <td style="text-align:center">${c.units}</td>
+                            <td style="text-align:right">
                                 <button class="btn btn-pass ${status === 'passed' ? 'active-pass' : ''}" onclick="setStatus('${c.code}', 'passed')">Pass</button>
                                 <button class="btn btn-fail ${status === 'failed' ? 'active-fail' : ''}" onclick="setStatus('${c.code}', 'failed')">Fail</button>
                             </td>
@@ -308,7 +222,8 @@
                         tbody.appendChild(tr);
                     });
                     table.appendChild(tbody);
-                    termCard.appendChild(table);
+                    tableWrap.appendChild(table);
+                    termCard.appendChild(tableWrap);
                     termContainer.appendChild(termCard);
                 }
             });
@@ -317,78 +232,8 @@
         });
     }
 
-    // --- PLANNER LOGIC ---
-    function renderPlannerSource() {
-        const filter = document.getElementById('plannerSearch').value.toLowerCase();
-        sourceZone.innerHTML = '';
-        curriculumData.forEach(y => y.terms.forEach(t => t.courses.forEach(c => {
-            if (courseStatus[c.code] !== 'passed' && !document.getElementById(`card-${c.code}-target`)) {
-                if (c.code.toLowerCase().includes(filter) || c.title.toLowerCase().includes(filter)) {
-                    const card = document.createElement('div');
-                    card.id = `card-${c.code}`;
-                    card.className = 'draggable-card';
-                    card.draggable = true;
-                    card.innerHTML = `<div><strong>${c.code}</strong><br>${c.title}</div><span class="card-units">${c.units}u</span>`;
-                    card.onclick = () => transferCard(card.id, 'target-zone');
-                    card.ondragstart = (ev) => ev.dataTransfer.setData("text", ev.target.id);
-                    sourceZone.appendChild(card);
-                }
-            }
-        })));
-    }
-
-    function transferCard(elementId, targetZoneId) {
-        const card = document.getElementById(elementId);
-        const code = elementId.replace('card-', '');
-        const course = getCourseByCode(code);
-        const target = document.getElementById(targetZoneId);
-
-        if (targetZoneId === 'target-zone') {
-            const current = calculatePlannerUnits();
-            const max = parseInt(document.getElementById('selMaxUnits').value);
-            if (current + course.units > max) { alert("Overload!"); return; }
-        }
-        target.appendChild(card);
-        updatePlannerStats();
-    }
-
-    function calculatePlannerUnits() {
-        return Array.from(targetZone.querySelectorAll('.draggable-card'))
-            .reduce((sum, card) => sum + getCourseByCode(card.id.replace('card-', '')).units, 0);
-    }
-
-    function updatePlannerStats() {
-        const units = calculatePlannerUnits();
-        const stat = document.getElementById('planner-status');
-        stat.textContent = `${units} Units`;
-        stat.className = units < 12 ? 'status-warning' : (units > 21 ? 'status-invalid' : 'status-valid');
-    }
-
-    function allowDrop(ev) { ev.preventDefault(); }
-    function drop(ev) {
-        ev.preventDefault();
-        const id = ev.dataTransfer.getData("text");
-        transferCard(id, ev.currentTarget.id);
-    }
-
-    function loadTermTemplate() {
-        const year = document.getElementById('selYear').value;
-        const termName = document.getElementById('selTerm').value;
-        const term = curriculumData.find(y => y.year === year).terms.find(t => t.name === termName);
-        
-        term.courses.forEach(c => {
-            if (courseStatus[c.code] !== 'passed') {
-                const existing = document.getElementById(`card-${c.code}`);
-                if (existing) transferCard(existing.id, 'target-zone');
-            }
-        });
-    }
-
-    // Init
     document.getElementById('searchBar').addEventListener('input', (e) => renderCurriculum(e.target.value));
-    document.getElementById('plannerSearch').addEventListener('input', renderPlannerSource);
     renderCurriculum();
-    renderPlannerSource();
 </script>
 </body>
 </html>
